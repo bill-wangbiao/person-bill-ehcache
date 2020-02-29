@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--将数据库和javaBean相关联-->
-<mapper namespace="com.xyy.ec.dao.UserDao">
+<mapper namespace="com.person.bill.dao.UserDao">
 
-    <resultMap id="BaseResultMap" type="com.xyy.ec.model.User">
+    <resultMap id="BaseResultMap" type="com.person.bill.model.User">
         <id column="id" jdbcType="VARCHAR" property="id"/>
         <id column="userid" jdbcType="BIGINT" property="userId"/>
         <id column="username" jdbcType="VARCHAR" property="userName"/>
@@ -17,7 +17,7 @@
     </sql>
 
     <!--插入新的用户信息-->
-    <insert id="insert" parameterType="com.xyy.ec.model.User">
+    <insert id="insert" parameterType="com.person.bill.model.User">
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
         </selectKey>
@@ -40,7 +40,7 @@
     </delete>
 
     <!--更新用户信息-->
-    <update id="updateByPrimaryKey" parameterType="com.xyy.ec.model.User">
+    <update id="updateByPrimaryKey" parameterType="com.person.bill.model.User">
         update tbl_user
         set
         userid= #{userId,jdbcType=BIGINT},

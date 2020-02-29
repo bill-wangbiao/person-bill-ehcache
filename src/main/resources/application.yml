@@ -9,7 +9,7 @@ spring:
 
 # 日志配置
 logging:
-  file: D:\xiaoyaoyao\codes\GitHub\xyy-ec-ehcache\ehcache.log
+  file: D:\codes\ehcache.log
   level: info
 
 ---
